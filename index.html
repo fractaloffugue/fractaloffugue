@@ -105,29 +105,6 @@
                             <strong>Undergraduate Research Assistant</strong>
                         </div>
                         <div>
-                            <span class="date">Summer 2024</span>
-                        </div>
-                    </div>
-                    <div class="company">
-                        <img src="images/virginia_tech.svg" alt="Virginia Tech" class="company-logo">
-                        <div class="company-info">
-                            <a href="https://sanghani.cs.vt.edu" target="_blank">Sanghani Center for AI & Data Analytics</a>, Virginia Tech
-                        </div>
-                        <span class="location">Blacksburg, VA</span>
-                    </div>
-                    <ul>
-                        <li>Developed metadata-augmented RAG system with Prof. Naren Ramakrishnan for financial document question-answering, processing SEC 10-K/10-Q filings using ChromaDB vector database and OpenAI embeddings with Azure deployment.</li>
-                        <li>Engineered document preprocessing pipeline with tiktoken-based chunking and metadata extraction, enabling filtered retrieval by company name and fiscal year through ChromaDB's persistent storage.</li>
-                        <li>Implemented ground truth generation pipeline using GPT-4o for automated annotation of financial analytics queries, creating evaluation datasets with citation-based answer verification.</li>
-                    </ul>
-                </div>
-
-                <div class="item">
-                    <div class="item-header">
-                        <div>
-                            <strong>Undergraduate Research Assistant</strong>
-                        </div>
-                        <div>
                             <span class="date">2021 - 2023</span>
                         </div>
                     </div>
@@ -145,7 +122,35 @@
                     </ul>
                 </div>
 
-                <div class="item">
+                <button class="show-more-btn" onclick="toggleUTAExperience()">
+                    <span id="toggle-text">Show more experience</span>
+                    <i class="ph ph-caret-down" id="toggle-icon"></i>
+                </button>
+
+                <div class="item hidden-experience">
+                    <div class="item-header">
+                        <div>
+                            <strong>Undergraduate Research Assistant</strong>
+                        </div>
+                        <div>
+                            <span class="date">Summer 2024</span>
+                        </div>
+                    </div>
+                    <div class="company">
+                        <img src="images/virginia_tech.svg" alt="Virginia Tech" class="company-logo">
+                        <div class="company-info">
+                            <a href="https://sanghani.cs.vt.edu" target="_blank">Sanghani Center for AI & Data Analytics</a>, Virginia Tech
+                        </div>
+                        <span class="location">Blacksburg, VA</span>
+                    </div>
+                    <ul>
+                        <li>Developed metadata-augmented RAG system with Prof. Naren Ramakrishnan for financial document question-answering, processing SEC 10-K/10-Q filings using ChromaDB vector database and OpenAI embeddings with Azure deployment.</li>
+                        <li>Engineered document preprocessing pipeline with tiktoken-based chunking and metadata extraction, enabling filtered retrieval by company name and fiscal year through ChromaDB's persistent storage.</li>
+                        <li>Implemented ground truth generation pipeline using GPT-4o for automated annotation of financial analytics queries, creating evaluation datasets with citation-based answer verification.</li>
+                    </ul>
+                </div>
+
+                <div class="item hidden-experience" id="uta-experience">
                     <div class="item-header">
                         <div>
                             <strong>Undergraduate Teaching Assistant</strong>
@@ -397,6 +402,22 @@
 
         // Load stats when page loads
         window.addEventListener('load', fetchDiscordStats);
+
+        // Toggle UTA Experience
+        function toggleUTAExperience() {
+            const experiences = document.querySelectorAll('.hidden-experience');
+            const button = document.querySelector('.show-more-btn');
+            const toggleText = document.getElementById('toggle-text');
+
+            experiences.forEach(exp => exp.classList.toggle('visible'));
+            button.classList.toggle('expanded');
+
+            if (button.classList.contains('expanded')) {
+                toggleText.textContent = 'Show less experience';
+            } else {
+                toggleText.textContent = 'Show more experience';
+            }
+        }
     </script>
 </body>
 
