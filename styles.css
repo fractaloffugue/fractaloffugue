@@ -225,6 +225,49 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Community Link */
+.community-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background-color: #5865F2;
+    color: white !important;
+    border-radius: 4px;
+    text-decoration: none !important;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.community-link:hover {
+    background-color: #4752C4;
+    text-decoration: none !important;
+}
+
+.community-link i {
+    font-size: 1.1rem;
+}
+
+.server-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 0.85rem;
+    padding: 4px 0;
+}
+
+.server-stats i {
+    color: #888;
+    font-size: 1rem;
+}
+
+.server-stats strong {
+    color: #333;
+    font-weight: 600;
+}
+
 /* Research & Projects Section */
 .project-card {
     padding: 12px;
