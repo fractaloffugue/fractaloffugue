@@ -28,6 +28,8 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8px;
+    flex-wrap: nowrap;
+    gap: 20px;
 }
 
 .name {
@@ -36,6 +38,7 @@ header {
     margin-bottom: 0;
     color: #000;
     font-weight: 400;
+    flex-shrink: 0;
 }
 
 .resume-download {
@@ -45,6 +48,8 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .resume-download i {
