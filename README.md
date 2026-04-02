@@ -1,6 +1,6 @@
 <div><h1><img src="https://emojis.slackmojis.com/emojis/images/1643514389/3643/cool-doge.gif?1643514389" width="30"/> Hey! I'm Hun, nice to see you.</h1></div>
 
-**CS Graduate Student @ Virginia Tech | Full-Stack AI/ML Engineer | CFA Candidate**
+**Full-Stack AI/ML Engineer | CFA Candidate**
 
 🔬 Research Focus: Large Language Models, NLP, Financial Analytics, Forecasting \
 🎯 Interests: Applying AI/ML to solve complex problems in quantitative finance and trading systems
