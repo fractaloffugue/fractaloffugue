@@ -1,6 +1,6 @@
 <div><h1><img src="https://emojis.slackmojis.com/emojis/images/1643514389/3643/cool-doge.gif?1643514389" width="30"/> Hey! I'm Hun, nice to see you.</h1></div>
 
-**CS Graduate Student @ Virginia Tech | Full-Stack AI/ML Engineer | CFA Candidate**
+**Full-Stack AI/ML Engineer | CFA Candidate**
 
 🔬 Research Focus: Large Language Models, NLP, Financial Analytics, Forecasting \
 🎯 Interests: Applying AI/ML to solve complex problems in quantitative finance and trading systems
@@ -30,6 +30,6 @@
 ![Terraform](https://img.shields.io/badge/-Terraform-623CE4?style=flat-square&logo=terraform&logoColor=white)
 ![Typesense](https://img.shields.io/badge/-Typesense-4A5568?style=flat-square&logo=typesense&logoColor=white)
 ---
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hunliang/)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hunliang@vt.edu) \
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]()
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hunshaw@gmail.com) \
 **Happy to connect!**
