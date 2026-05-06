@@ -50,6 +50,37 @@ header {
     margin-bottom: 6px;
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.lang-toggle {
+    font-family: inherit;
+    font-size: 0.75rem;
+    color: #666;
+    background: transparent;
+    border: 1px solid #d0d0d0;
+    border-radius: 999px;
+    padding: 3px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+}
+
+.lang-toggle:hover {
+    border-color: #0066cc;
+    color: #0066cc;
+    background-color: #f0f6ff;
+}
+
+body.lang-zh {
+    font-family: 'Lora', 'Noto Serif SC', 'Songti SC', 'PingFang SC', serif;
+}
+
 .resume-download {
     font-size: 0.75rem;
     color: #666;

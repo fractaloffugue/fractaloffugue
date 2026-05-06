@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(open:*)"
+      "Bash(open:*)",
+      "Bash(node -e \"const fs=require\\('fs'\\);const html=fs.readFileSync\\('/Users/hunliang/Projects/fractaloffugue/index.html','utf8'\\);console.log\\('keys count:', \\(html.match\\(/data-i18n=/g\\)||[]\\).length\\);\")",
+      "Bash(node *)"
     ]
   }
 }

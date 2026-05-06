@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="styles.css">
@@ -18,14 +18,17 @@
     <div class="container">
         <header>
             <div class="header-row">
-                <h1 class="name">Hun Liang</h1>
-                <a href="Hun_Liang_resume_2026.pdf" download class="resume-download"><i class="ph ph-file-pdf"></i> download resume PDF</a>
+                <h1 class="name" data-i18n="name">Hun Liang</h1>
+                <div class="header-actions">
+                    <button id="lang-toggle" class="lang-toggle" onclick="toggleLanguage()" aria-label="Toggle language">中文</button>
+                    <a href="Hun_Liang_resume_2026.pdf" download class="resume-download" data-i18n="resume.download"><i class="ph ph-file-pdf"></i> download resume PDF</a>
+                </div>
             </div>
-            <p class="tagline">Software Engineer &mdash; New Graduate</p>
+            <p class="tagline" data-i18n="tagline">Software Engineer &mdash; New Graduate</p>
             <div class="contact">
                 <a href="mailto:hunliang@vt.edu"><i class="ph ph-envelope"></i> hunliang@vt.edu</a> ·
                 <span><i class="ph ph-phone"></i> 571-523-7846</span> ·
-                <span><i class="ph ph-map-pin"></i> NYC, New York</span> ·
+                <span data-i18n="contact.location"><i class="ph ph-map-pin"></i> NYC, New York</span> ·
                 <a href="https://www.linkedin.com/in/hunliang/" target="_blank"><i class="ph ph-linkedin-logo"></i>
                     LinkedIn</a> ·
                 <a href="https://github.com/fractaloffugue" target="_blank"><i class="ph ph-github-logo"></i> GitHub</a>
@@ -34,58 +37,58 @@
 
         <main>
             <section class="section">
-                <h2><i class="ph ph-graduation-cap"></i> Education</h2>
+                <h2 data-i18n="section.education"><i class="ph ph-graduation-cap"></i> Education</h2>
                 <div class="item">
                     <div class="item-header">
                         <div>
-                            <strong>Virginia Tech</strong>
-                            <span class="location">Blacksburg, VA</span>
+                            <strong data-i18n="edu.school">Virginia Tech</strong>
+                            <span class="location" data-i18n="edu.location">Blacksburg, VA</span>
                         </div>
                     </div>
                     <div class="degree">
-                        <em>Master of Engineering in Computer Science</em>
+                        <em data-i18n="edu.master">Master of Engineering in Computer Science</em>
                         <span class="date">2025</span> &mdash;
-                        <span class="gpa">GPA: 3.9/4.0 </span>
+                        <span class="gpa" data-i18n="edu.gpa.master">GPA: 3.9/4.0 </span>
                     </div>
                     <div class="degree">
-                        <em>Bachelor of Science in Computer Science</em>
+                        <em data-i18n="edu.bachelor">Bachelor of Science in Computer Science</em>
                         <span class="date">2024</span> &mdash;
-                        <span class="gpa">GPA: 3.7/4.0, Magna Cum Laude </span>
+                        <span class="gpa" data-i18n="edu.gpa.bachelor">GPA: 3.8/4.0, Magna Cum Laude </span>
                     </div>
-                    <p class="coursework"><strong>Coursework:</strong> Deep Learning, Machine Learning, Info.
+                    <p class="coursework" data-i18n="edu.coursework"><strong>Coursework:</strong> Deep Learning, Machine Learning, Info.
                         Visualization, AI in Software Delivery, Social Media Analytics</p>
                 </div>
             </section>
 
             <section class="section">
-                <h2><i class="ph ph-briefcase"></i> Experience</h2>
+                <h2 data-i18n="section.experience"><i class="ph ph-briefcase"></i> Experience</h2>
 
                 <div class="item">
                     <div class="item-header">
                         <div>
-                            <strong>Founder & Backend Software Engineer</strong>
+                            <strong data-i18n="exp.anode.title">Founder & Backend Software Engineer</strong>
                         </div>
                         <div>
-                            <span class="date">Jan 2025 - Present</span>
+                            <span class="date" data-i18n="exp.anode.date">Jan 2025 - Present</span>
                         </div>
                     </div>
                     <div class="company">
                         <img src="images/anodenews.svg" alt="Anode News" class="company-logo">
-                        <div class="company-info">
+                        <div class="company-info" data-i18n="exp.anode.company">
                             <a href="https://beta.anode.news/" target="_blank">Anode News</a> | Cryptocurrency
                             Intelligence Platform
                         </div>
-                        <span class="location">Blacksburg, VA</span>
+                        <span class="location" data-i18n="exp.anode.location">Blacksburg, VA</span>
                     </div>
                     <ul>
-                        <li>Built a personalized crypto news aggregation engine using Go, PostgreSQL, Redis, and Next.js
+                        <li data-i18n="exp.anode.b1">Built a personalized crypto news aggregation engine using Go, PostgreSQL, Redis, and Next.js
                             that prioritizes relevant content based on user watchlists, tagging key sentiment shifts and
                             market trends through RESTful APIs and WebSocket connections.</li>
-                        <li>Implemented advanced topic modeling algorithms (LDA, BERTopic) with Python, scikit-learn,
+                        <li data-i18n="exp.anode.b2">Implemented advanced topic modeling algorithms (LDA, BERTopic) with Python, scikit-learn,
                             and Hugging Face Transformers, to extract underlying themes from crypto news sources,
                             enabling users to discover hidden market narratives and interconnected industry
                             developments.</li>
-                        <li>Developed predictive time-series forecasting using frameworks like NeuralProphet that track
+                        <li data-i18n="exp.anode.b3">Developed predictive time-series forecasting using frameworks like NeuralProphet that track
                             sentiment momentum patterns and their price trajectories, achieving 78% directional accuracy
                             on select tokens.</li>
                     </ul>
@@ -94,27 +97,27 @@
                 <div class="item">
                     <div class="item-header">
                         <div>
-                            <strong>Software Engineer Co-Op</strong>
+                            <strong data-i18n="exp.peraton.title">Software Engineer Co-Op</strong>
                         </div>
                         <div>
-                            <span class="date">2023</span>
+                            <span class="date" data-i18n="exp.peraton.date">2023</span>
                         </div>
                     </div>
                     <div class="company">
                         <img src="images/peraton.jpeg" alt="Peraton" class="company-logo">
-                        <div class="company-info">
+                        <div class="company-info" data-i18n="exp.peraton.company">
                             <a href="https://www.peraton.com/" target="_blank">Peraton</a>
                         </div>
-                        <span class="location">Blacksburg, VA</span>
+                        <span class="location" data-i18n="exp.peraton.location">Blacksburg, VA</span>
                     </div>
                     <ul>
-                        <li>Prototyped microservice deployment pipeline (Docker, AWS EKS, Terraform), which reduced
+                        <li data-i18n="exp.peraton.b1">Prototyped microservice deployment pipeline (Docker, AWS EKS, Terraform), which reduced
                             deployment time by ~65% and improved system scalability and was eventually adopted by
                             several teams.</li>
-                        <li>Integrated Big Bang 2.0 Helm chart for deploying DoD-hardened packages into a Kubernetes
+                        <li data-i18n="exp.peraton.b2">Integrated Big Bang 2.0 Helm chart for deploying DoD-hardened packages into a Kubernetes
                             cluster, and streamlined pre-deployment compliance checklist with NIST 800-171 security
                             standard.</li>
-                        <li>Simulated disaster recovery for the Kubernetes cluster, reduced recovery timeframe by 4
+                        <li data-i18n="exp.peraton.b3">Simulated disaster recovery for the Kubernetes cluster, reduced recovery timeframe by 4
                             hours and remediated 95% of critical security vulnerabilities within 48-hour SLA in canary.
                         </li>
                     </ul>
@@ -123,31 +126,31 @@
                 <div class="item">
                     <div class="item-header">
                         <div>
-                            <strong>Undergraduate Research Assistant</strong>
+                            <strong data-i18n="exp.visionarium.title">Undergraduate Research Assistant</strong>
                         </div>
                         <div>
-                            <span class="date">2021 - 2023</span>
+                            <span class="date" data-i18n="exp.visionarium.date">2021 - 2023</span>
                         </div>
                     </div>
                     <div class="company">
                         <img src="images/virginia_tech.svg" alt="Virginia Tech" class="company-logo">
-                        <div class="company-info">
+                        <div class="company-info" data-i18n="exp.visionarium.company">
                             <a href="https://arc.vt.edu/services/visualization/visionarium.html"
                                 target="_blank">Visionarium @ Advanced Research Computing</a>, Virginia Tech
                         </div>
-                        <span class="location">Blacksburg, VA</span>
+                        <span class="location" data-i18n="exp.visionarium.location">Blacksburg, VA</span>
                     </div>
                     <ul>
-                        <li>Implemented new techniques for scientific visualizations with HTML5/X3D in ParaView and
+                        <li data-i18n="exp.visionarium.b1">Implemented new techniques for scientific visualizations with HTML5/X3D in ParaView and
                             Castle Game Engine with Python – improved rendering performance by ~40% and reduced load
                             times for complex 3D medical datasets. My work was critical to our lab winning a grant from
                             the <a
                                 href="https://cairinainc.com/cairina-joins-ramp-accelerator-to-advance-precision-cancer-technology/"
                                 , target="_blank">RAMP</a> accelerator.</li>
-                        <li>Submitted <a href="https://dl.acm.org/doi/epdf/10.1145/3611314.3625831"
+                        <li data-i18n="exp.visionarium.b2">Submitted <a href="https://dl.acm.org/doi/epdf/10.1145/3611314.3625831"
                                 target="_blank">"Enhancing Brain Flow Visualization with Automated 3D Data Processing: A
                                 Study on DCE-MRI Data from Mice with Tumors"</a> paper to the ACM Web3D conference.</li>
-                        <li>Won 2023 VTURCS 3rd Place Research & 3rd Place Industry Awards within the Department of
+                        <li data-i18n="exp.visionarium.b3">Won 2023 VTURCS 3rd Place Research & 3rd Place Industry Awards within the Department of
                             Computer Science at Virginia Tech annual research symposium.</li>
                     </ul>
                 </div>
@@ -160,28 +163,28 @@
                 <div class="item hidden-experience">
                     <div class="item-header">
                         <div>
-                            <strong>Undergraduate Research Assistant</strong>
+                            <strong data-i18n="exp.sanghani.title">Undergraduate Research Assistant</strong>
                         </div>
                         <div>
-                            <span class="date">Summer 2024</span>
+                            <span class="date" data-i18n="exp.sanghani.date">Summer 2024</span>
                         </div>
                     </div>
                     <div class="company">
                         <img src="images/virginia_tech.svg" alt="Virginia Tech" class="company-logo">
-                        <div class="company-info">
+                        <div class="company-info" data-i18n="exp.sanghani.company">
                             <a href="https://sanghani.cs.vt.edu" target="_blank">Sanghani Center for AI & Data
                                 Analytics</a>, Virginia Tech
                         </div>
-                        <span class="location">Blacksburg, VA</span>
+                        <span class="location" data-i18n="exp.sanghani.location">Blacksburg, VA</span>
                     </div>
                     <ul>
-                        <li>Developed metadata-augmented RAG system with Prof. Naren Ramakrishnan for financial document
+                        <li data-i18n="exp.sanghani.b1">Developed metadata-augmented RAG system with Prof. Naren Ramakrishnan for financial document
                             question-answering, processing SEC 10-K/10-Q filings using ChromaDB vector database and
                             OpenAI embeddings with Azure deployment.</li>
-                        <li>Engineered document preprocessing pipeline with tiktoken-based chunking and metadata
+                        <li data-i18n="exp.sanghani.b2">Engineered document preprocessing pipeline with tiktoken-based chunking and metadata
                             extraction, enabling filtered retrieval by company name and fiscal year through ChromaDB's
                             persistent storage.</li>
-                        <li>Implemented ground truth generation pipeline using GPT-4o for automated annotation of
+                        <li data-i18n="exp.sanghani.b3">Implemented ground truth generation pipeline using GPT-4o for automated annotation of
                             financial analytics queries, creating evaluation datasets with citation-based answer
                             verification.</li>
                     </ul>
@@ -190,46 +193,46 @@
                 <div class="item hidden-experience" id="uta-experience">
                     <div class="item-header">
                         <div>
-                            <strong>Undergraduate Teaching Assistant</strong>
+                            <strong data-i18n="exp.uta.title">Undergraduate Teaching Assistant</strong>
                         </div>
                         <div>
-                            <span class="date">2021 - 2024</span>
+                            <span class="date" data-i18n="exp.uta.date">2021 - 2024</span>
                         </div>
                     </div>
                     <div class="company">
                         <img src="images/virginia_tech.svg" alt="Virginia Tech" class="company-logo">
-                        <div class="company-info">
+                        <div class="company-info" data-i18n="exp.uta.company">
                             <a href="https://cs.vt.edu" target="_blank">Department of Computer Science</a>, Virginia
                             Tech
                         </div>
-                        <span class="location">Blacksburg, VA</span>
+                        <span class="location" data-i18n="exp.uta.location">Blacksburg, VA</span>
                     </div>
                     <ul>
-                        <li>Hosted weekly labs, lectures and office hours for several courses including Python II
+                        <li data-i18n="exp.uta.b1">Hosted weekly labs, lectures and office hours for several courses including Python II
                             (CS1064, CS2064), Computer Organization I (CS2114), Java I and II (CS2114).</li>
                     </ul>
                 </div>
             </section>
 
             <section class="section">
-                <h2><i class="ph ph-flask"></i> Research & Projects</h2>
+                <h2 data-i18n="section.research"><i class="ph ph-flask"></i> Research & Projects</h2>
                 <div class="item">
                     <div class="project-card" onclick="openModal('alphacore')">
                         <div class="project-header">
                             <div class="project-title-row">
-                                <strong>Alphacore - Analysis of Token Liquidity Distribution</strong>
-                                <span class="course-badge">Social Media Analytics</span>
+                                <strong data-i18n="proj.alphacore.title">Alphacore - Analysis of Token Liquidity Distribution</strong>
+                                <span class="course-badge" data-i18n="proj.alphacore.badge">Social Media Analytics</span>
                             </div>
-                            <span class="date">Fall 2024</span>
+                            <span class="date" data-i18n="proj.alphacore.date">Fall 2024</span>
                         </div>
-                        <p class="project-description">Network analysis of cryptocurrency exchange liquidity patterns
+                        <p class="project-description" data-i18n="proj.alphacore.desc">Network analysis of cryptocurrency exchange liquidity patterns
                             using 18M Ethereum transactions. Analyzed CEX/DEX centralization risks through modularity
                             detection, PageRank analysis, and power-law distribution modeling.</p>
                         <div class="project-tags">
                             <span class="tag">Python</span>
                             <span class="tag">NetworkX</span>
                             <span class="tag">Gephi</span>
-                            <span class="tag">Data Visualization</span>
+                            <span class="tag" data-i18n="tag.dataviz">Data Visualization</span>
                         </div>
                     </div>
                 </div>
@@ -238,12 +241,12 @@
                     <div class="project-card" onclick="openModal('smartadmit')">
                         <div class="project-header">
                             <div class="project-title-row">
-                                <strong>SmartAdmit - College Admission Prediction System</strong>
-                                <span class="course-badge">Machine Learning</span>
+                                <strong data-i18n="proj.smartadmit.title">SmartAdmit - College Admission Prediction System</strong>
+                                <span class="course-badge" data-i18n="proj.smartadmit.badge">Machine Learning</span>
                             </div>
-                            <span class="date">Fall 2024</span>
+                            <span class="date" data-i18n="proj.smartadmit.date">Fall 2024</span>
                         </div>
-                        <p class="project-description">Built auto-decision-maker for college admissions using
+                        <p class="project-description" data-i18n="proj.smartadmit.desc">Built auto-decision-maker for college admissions using
                             multi-layer perceptron with multi-modal features (numerical, categorical, textual). Achieved
                             58% overall accuracy and 72% admission accuracy on 12,000 undergraduate applications through
                             feature engineering and ensemble methods.</p>
@@ -259,31 +262,31 @@
             </section>
 
             <section class="section">
-                <h2><i class="ph ph-code"></i> Technical Skills</h2>
+                <h2 data-i18n="section.skills"><i class="ph ph-code"></i> Technical Skills</h2>
                 <div class="skills">
-                    <p><strong>Languages:</strong> Go, Python, Java, Javascript, TypeScript, C/C++, HTML/CSS, SQL</p>
-                    <p><strong>Tools/Technologies:</strong> Git, PostgreSQL, MongoDB, AWS, Docker, Kubernetes,
+                    <p data-i18n="skills.languages"><strong>Languages:</strong> Go, Python, Java, Javascript, TypeScript, C/C++, HTML/CSS, SQL</p>
+                    <p data-i18n="skills.tools"><strong>Tools/Technologies:</strong> Git, PostgreSQL, MongoDB, AWS, Docker, Kubernetes,
                         Typesense, Redis, PyTorch, Keras</p>
                 </div>
             </section>
 
             <section class="section">
-                <h2><i class="ph ph-users"></i> Community & Leadership</h2>
+                <h2 data-i18n="section.community"><i class="ph ph-users"></i> Community & Leadership</h2>
                 <div class="item">
                     <div class="item-header">
-                        <div>
+                        <div data-i18n="community.title">
                             <strong>Founder & Community Manager</strong> - BachStreet Discord Community
                         </div>
-                        <span class="date">2020 - Present</span>
+                        <span class="date" data-i18n="community.date">2020 - Present</span>
                     </div>
                     <ul>
-                        <li>Founded and grew Discord-partnered community server to active membership (5/5 rating on <a
+                        <li data-i18n="community.b1">Founded and grew Discord-partnered community server to active membership (5/5 rating on <a
                                 href="https://disboard.org/server/707021383288488047" target="_blank">Disboard</a>)</li>
-                        <li>Managed community events/recitals, moderation, and engagement initiatives</li>
+                        <li data-i18n="community.b2">Managed community events/recitals, moderation, and engagement initiatives</li>
                     </ul>
                     <div style="margin-top: 8px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
                         <a href="https://discord.com/servers/bachstreet-707021383288488047" target="_blank"
-                            class="community-link">
+                            class="community-link" data-i18n="community.join">
                             <i class="ph ph-discord-logo"></i> Join Community
                         </a>
                         <a href="https://www.youtube.com/@bachstreet5029" target="_blank"
@@ -305,40 +308,40 @@
             <span class="close" onclick="closeModal('alphacore')">&times;</span>
             <div class="modal-body">
                 <div class="modal-sidebar">
-                    <h3>Alphacore Research</h3>
-                    <p class="modal-subtitle">Social Media Analytics Course Project</p>
+                    <h3 data-i18n="modal.alpha.title">Alphacore Research</h3>
+                    <p class="modal-subtitle" data-i18n="modal.alpha.subtitle">Social Media Analytics Course Project</p>
 
                     <div class="modal-section">
-                        <h4>TL;DR</h4>
-                        <p>Analyzed 18 million Ethereum token transactions to reveal critical liquidity concentration in
+                        <h4 data-i18n="modal.alpha.tldr.head">TL;DR</h4>
+                        <p data-i18n="modal.alpha.tldr.body">Analyzed 18 million Ethereum token transactions to reveal critical liquidity concentration in
                             centralized exchanges (CEXs), exposing systemic market risks.</p>
                     </div>
 
                     <div class="modal-section">
-                        <h4>Key Findings</h4>
+                        <h4 data-i18n="modal.alpha.findings.head">Key Findings</h4>
                         <ul>
-                            <li><strong>Power-law distribution:</strong> Small number of CEX wallets control
+                            <li data-i18n="modal.alpha.finding1"><strong>Power-law distribution:</strong> Small number of CEX wallets control
                                 disproportionate liquidity share</li>
-                            <li><strong>Centralization risk:</strong> Binance addresses show hub-and-spoke structure
+                            <li data-i18n="modal.alpha.finding2"><strong>Centralization risk:</strong> Binance addresses show hub-and-spoke structure
                                 with single points of failure</li>
-                            <li><strong>DEX resilience:</strong> Decentralized exchanges exhibit more distributed
+                            <li data-i18n="modal.alpha.finding3"><strong>DEX resilience:</strong> Decentralized exchanges exhibit more distributed
                                 influence patterns</li>
                         </ul>
                     </div>
 
                     <div class="modal-section">
-                        <h4>Technical Approach</h4>
+                        <h4 data-i18n="modal.alpha.tech.head">Technical Approach</h4>
                         <ul>
-                            <li>Network graph construction with 6M+ nodes</li>
-                            <li>Louvain modularity maximization (Q>0.74)</li>
-                            <li>PageRank centrality analysis</li>
-                            <li>Fruchterman-Reingold force-directed layouts</li>
+                            <li data-i18n="modal.alpha.tech1">Network graph construction with 6M+ nodes</li>
+                            <li data-i18n="modal.alpha.tech2">Louvain modularity maximization (Q>0.74)</li>
+                            <li data-i18n="modal.alpha.tech3">PageRank centrality analysis</li>
+                            <li data-i18n="modal.alpha.tech4">Fruchterman-Reingold force-directed layouts</li>
                         </ul>
                     </div>
 
                     <div class="modal-section">
-                        <h4>Tools & Technologies</h4>
-                        <p><strong>Python:</strong> NetworkX, pandas, NumPy<br>
+                        <h4 data-i18n="modal.alpha.tools.head">Tools & Technologies</h4>
+                        <p data-i18n="modal.alpha.tools.body"><strong>Python:</strong> NetworkX, pandas, NumPy<br>
                             <strong>Visualization:</strong> Gephi, Matplotlib<br>
                             <strong>Data:</strong> Chartalist ERC-20 dataset
                         </p>
@@ -357,41 +360,41 @@
             <span class="close" onclick="closeModal('smartadmit')">&times;</span>
             <div class="modal-body">
                 <div class="modal-sidebar">
-                    <h3>SmartAdmit</h3>
-                    <p class="modal-subtitle">Machine Learning Course Project</p>
+                    <h3 data-i18n="modal.smart.title">SmartAdmit</h3>
+                    <p class="modal-subtitle" data-i18n="modal.smart.subtitle">Machine Learning Course Project</p>
 
                     <div class="modal-section">
-                        <h4>TL;DR</h4>
-                        <p>Developed an automated college admission decision system using multi-layer perceptron with
+                        <h4 data-i18n="modal.smart.tldr.head">TL;DR</h4>
+                        <p data-i18n="modal.smart.tldr.body">Developed an automated college admission decision system using multi-layer perceptron with
                             multi-modal features, achieving 72% accuracy for admission predictions on 12,000
                             applications.</p>
                     </div>
 
                     <div class="modal-section">
-                        <h4>Key Results</h4>
+                        <h4 data-i18n="modal.smart.results.head">Key Results</h4>
                         <ul>
-                            <li><strong>58% overall accuracy:</strong> Balanced performance across admit/deny/waitlist
+                            <li data-i18n="modal.smart.r1"><strong>58% overall accuracy:</strong> Balanced performance across admit/deny/waitlist
                                 classes</li>
-                            <li><strong>72% admission accuracy:</strong> Strong performance on positive admission
+                            <li data-i18n="modal.smart.r2"><strong>72% admission accuracy:</strong> Strong performance on positive admission
                                 decisions</li>
-                            <li><strong>Feature importance:</strong> Word clouds revealed key application terms driving
+                            <li data-i18n="modal.smart.r3"><strong>Feature importance:</strong> Word clouds revealed key application terms driving
                                 decisions</li>
                         </ul>
                     </div>
 
                     <div class="modal-section">
-                        <h4>Technical Approach</h4>
+                        <h4 data-i18n="modal.smart.tech.head">Technical Approach</h4>
                         <ul>
-                            <li>Multi-layer perceptron with 2 hidden layers (100 neurons each)</li>
-                            <li>TF-IDF vectorization for textual features</li>
-                            <li>K-means clustering and PCA for dimensionality reduction</li>
-                            <li>Ensemble methods combining numerical, categorical, and text data</li>
+                            <li data-i18n="modal.smart.t1">Multi-layer perceptron with 2 hidden layers (100 neurons each)</li>
+                            <li data-i18n="modal.smart.t2">TF-IDF vectorization for textual features</li>
+                            <li data-i18n="modal.smart.t3">K-means clustering and PCA for dimensionality reduction</li>
+                            <li data-i18n="modal.smart.t4">Ensemble methods combining numerical, categorical, and text data</li>
                         </ul>
                     </div>
 
                     <div class="modal-section">
-                        <h4>Dataset & Tools</h4>
-                        <p><strong>Data:</strong> 12,000 undergraduate applications<br>
+                        <h4 data-i18n="modal.smart.data.head">Dataset & Tools</h4>
+                        <p data-i18n="modal.smart.data.body"><strong>Data:</strong> 12,000 undergraduate applications<br>
                             <strong>Features:</strong> Numerical (GPA, test scores), categorical (demographics), textual
                             (essays)<br>
                             <strong>Tools:</strong> Python, scikit-learn, pandas, matplotlib
@@ -406,6 +409,194 @@
     </div>
 
     <script>
+        const translations = {
+            zh: {
+                'page.title': '梁翰学的简历',
+                'name': '梁翰学',
+                'tagline': '软件工程师 — 应届毕业生',
+                'resume.download': '<i class="ph ph-file-pdf"></i> 下载简历 PDF',
+                'contact.location': '<i class="ph ph-map-pin"></i> 纽约市，纽约州',
+
+                'section.education': '<i class="ph ph-graduation-cap"></i> 教育背景',
+                'section.experience': '<i class="ph ph-briefcase"></i> 工作经历',
+                'section.research': '<i class="ph ph-flask"></i> 研究与项目',
+                'section.skills': '<i class="ph ph-code"></i> 技术能力',
+                'section.community': '<i class="ph ph-users"></i> 社区与领导力',
+
+                'edu.school': '弗吉尼亚理工大学',
+                'edu.location': '弗吉尼亚州布莱克斯堡',
+                'edu.master': '计算机科学工程硕士',
+                'edu.bachelor': '计算机科学理学学士',
+                'edu.gpa.master': 'GPA：3.9/4.0',
+                'edu.gpa.bachelor': 'GPA：3.8/4.0，优等荣誉毕业',
+                'edu.coursework': '<strong>相关课程：</strong>深度学习、机器学习、信息可视化、AI 软件交付、社交媒体分析',
+
+                'exp.anode.title': '创始人兼后端软件工程师',
+                'exp.anode.date': '2025 年 1 月 — 至今',
+                'exp.anode.company': '<a href="https://beta.anode.news/" target="_blank">Anode News</a> | 加密货币情报平台',
+                'exp.anode.location': '弗吉尼亚州布莱克斯堡',
+                'exp.anode.b1': '使用 Go、PostgreSQL、Redis 与 Next.js 构建个性化加密货币新闻聚合引擎，依据用户关注列表对内容进行优先级排序，通过 RESTful API 与 WebSocket 标记关键的情绪转变与市场趋势。',
+                'exp.anode.b2': '基于 Python、scikit-learn 与 Hugging Face Transformers 实现 LDA、BERTopic 等高级主题建模算法，从加密新闻源中提取潜在主题，帮助用户发现隐藏的市场叙事与行业关联动态。',
+                'exp.anode.b3': '使用 NeuralProphet 等框架开发预测性时间序列模型，跟踪情绪动量与价格走势之间的关系，在选定代币上达到 78% 的方向准确率。',
+
+                'exp.peraton.title': '软件工程实习生',
+                'exp.peraton.date': '2023 年',
+                'exp.peraton.company': '<a href="https://www.peraton.com/" target="_blank">Peraton</a>',
+                'exp.peraton.location': '弗吉尼亚州布莱克斯堡',
+                'exp.peraton.b1': '基于 Docker、AWS EKS 与 Terraform 设计微服务部署流水线原型，部署时间缩短约 65%，提升系统可扩展性，最终被多个团队采用。',
+                'exp.peraton.b2': '集成 Big Bang 2.0 Helm Chart，将国防部加固包部署至 Kubernetes 集群，并按照 NIST 800-171 安全标准简化部署前合规清单。',
+                'exp.peraton.b3': '为 Kubernetes 集群模拟灾难恢复场景，将恢复时长缩短 4 小时，并在金丝雀环境的 48 小时 SLA 内修复 95% 的关键安全漏洞。',
+
+                'exp.visionarium.title': '本科研究助理',
+                'exp.visionarium.date': '2021 — 2023 年',
+                'exp.visionarium.company': '<a href="https://arc.vt.edu/services/visualization/visionarium.html" target="_blank">Visionarium @ 高级研究计算中心</a>，弗吉尼亚理工大学',
+                'exp.visionarium.location': '弗吉尼亚州布莱克斯堡',
+                'exp.visionarium.b1': '在 ParaView 与 Castle Game Engine 中使用 HTML5/X3D 与 Python 实现新的科学可视化技术——渲染性能提升约 40%，复杂三维医学数据的加载时间显著缩短。该工作对实验室获得 <a href="https://cairinainc.com/cairina-joins-ramp-accelerator-to-advance-precision-cancer-technology/" target="_blank">RAMP</a> 加速器资助至关重要。',
+                'exp.visionarium.b2': '向 ACM Web3D 会议提交论文 <a href="https://dl.acm.org/doi/epdf/10.1145/3611314.3625831" target="_blank">《使用自动化三维数据处理增强脑血流可视化：基于荷瘤小鼠 DCE-MRI 数据的研究》</a>。',
+                'exp.visionarium.b3': '在弗吉尼亚理工大学计算机科学系年度研究研讨会上荣获 2023 年 VTURCS 研究三等奖与产业三等奖。',
+
+                'exp.sanghani.title': '本科研究助理',
+                'exp.sanghani.date': '2024 年夏',
+                'exp.sanghani.company': '<a href="https://sanghani.cs.vt.edu" target="_blank">Sanghani 人工智能与数据分析中心</a>，弗吉尼亚理工大学',
+                'exp.sanghani.location': '弗吉尼亚州布莱克斯堡',
+                'exp.sanghani.b1': '与 Naren Ramakrishnan 教授合作开发面向金融文档问答的元数据增强 RAG 系统，使用 ChromaDB 向量数据库与 OpenAI 嵌入（部署于 Azure）处理 SEC 10-K/10-Q 文件。',
+                'exp.sanghani.b2': '设计基于 tiktoken 分块与元数据提取的文档预处理流水线，借助 ChromaDB 持久化存储，实现按公司名称与财年的过滤检索。',
+                'exp.sanghani.b3': '使用 GPT-4o 实现基础事实生成流水线，自动标注金融分析查询，构建带引用支撑的答案验证评估数据集。',
+
+                'exp.uta.title': '本科助教',
+                'exp.uta.date': '2021 — 2024 年',
+                'exp.uta.company': '<a href="https://cs.vt.edu" target="_blank">计算机科学系</a>，弗吉尼亚理工大学',
+                'exp.uta.location': '弗吉尼亚州布莱克斯堡',
+                'exp.uta.b1': '主持每周实验、讲座与答疑，授课内容涵盖 Python II（CS1064、CS2064）、计算机组成原理 I（CS2114）以及 Java I 与 II（CS2114）。',
+
+                'proj.alphacore.title': 'Alphacore — 代币流动性分布分析',
+                'proj.alphacore.badge': '社交媒体分析',
+                'proj.alphacore.date': '2024 年秋',
+                'proj.alphacore.desc': '基于 1800 万笔以太坊交易，对加密货币交易所流动性模式进行网络分析。通过模块度检测、PageRank 分析与幂律分布建模研究 CEX/DEX 中心化风险。',
+
+                'proj.smartadmit.title': 'SmartAdmit — 大学录取预测系统',
+                'proj.smartadmit.badge': '机器学习',
+                'proj.smartadmit.date': '2024 年秋',
+                'proj.smartadmit.desc': '使用多层感知机结合多模态特征（数值、类别、文本）构建大学录取自动决策系统。通过特征工程与集成方法在 12,000 份本科申请中实现 58% 总体准确率与 72% 录取准确率。',
+
+                'tag.dataviz': '数据可视化',
+
+                'skills.languages': '<strong>编程语言：</strong>Go、Python、Java、JavaScript、TypeScript、C/C++、HTML/CSS、SQL',
+                'skills.tools': '<strong>工具与技术：</strong>Git、PostgreSQL、MongoDB、AWS、Docker、Kubernetes、Typesense、Redis、PyTorch、Keras',
+
+                'community.title': '<strong>创始人兼社区管理员</strong> — BachStreet Discord 社区',
+                'community.date': '2020 — 至今',
+                'community.b1': '创立并发展 Discord 官方合作社区服务器，活跃成员众多（在 <a href="https://disboard.org/server/707021383288488047" target="_blank">Disboard</a> 上获得 5/5 评分）。',
+                'community.b2': '负责社区活动与音乐会策划、社区管理及成员互动。',
+                'community.join': '<i class="ph ph-discord-logo"></i> 加入社区',
+
+                'modal.alpha.title': 'Alphacore 研究',
+                'modal.alpha.subtitle': '社交媒体分析课程项目',
+                'modal.alpha.tldr.head': '概述',
+                'modal.alpha.tldr.body': '分析 1800 万笔以太坊代币交易，揭示中心化交易所（CEX）的关键流动性集中现象，暴露系统性市场风险。',
+                'modal.alpha.findings.head': '主要发现',
+                'modal.alpha.finding1': '<strong>幂律分布：</strong>少量 CEX 钱包控制了与其数量极不相称的流动性份额',
+                'modal.alpha.finding2': '<strong>中心化风险：</strong>币安地址呈现中心辐射结构，存在单点故障风险',
+                'modal.alpha.finding3': '<strong>DEX 韧性：</strong>去中心化交易所呈现出更分散的影响力分布',
+                'modal.alpha.tech.head': '技术方法',
+                'modal.alpha.tech1': '构建超过 600 万节点的网络图',
+                'modal.alpha.tech2': 'Louvain 模块度最大化（Q>0.74）',
+                'modal.alpha.tech3': 'PageRank 中心性分析',
+                'modal.alpha.tech4': 'Fruchterman-Reingold 力导向布局',
+                'modal.alpha.tools.head': '工具与技术',
+                'modal.alpha.tools.body': '<strong>Python：</strong>NetworkX、pandas、NumPy<br><strong>可视化：</strong>Gephi、Matplotlib<br><strong>数据：</strong>Chartalist ERC-20 数据集',
+
+                'modal.smart.title': 'SmartAdmit',
+                'modal.smart.subtitle': '机器学习课程项目',
+                'modal.smart.tldr.head': '概述',
+                'modal.smart.tldr.body': '使用多层感知机结合多模态特征开发自动化大学录取决策系统，在 12,000 份申请中实现 72% 的录取预测准确率。',
+                'modal.smart.results.head': '主要结果',
+                'modal.smart.r1': '<strong>58% 总体准确率：</strong>在录取/拒绝/候补三类中表现均衡',
+                'modal.smart.r2': '<strong>72% 录取准确率：</strong>在正向录取决策上表现强劲',
+                'modal.smart.r3': '<strong>特征重要性：</strong>词云揭示驱动录取决策的关键申请用语',
+                'modal.smart.tech.head': '技术方法',
+                'modal.smart.t1': '含 2 个隐藏层（每层 100 个神经元）的多层感知机',
+                'modal.smart.t2': '文本特征的 TF-IDF 向量化',
+                'modal.smart.t3': 'K-means 聚类与 PCA 降维',
+                'modal.smart.t4': '结合数值、类别与文本数据的集成方法',
+                'modal.smart.data.head': '数据集与工具',
+                'modal.smart.data.body': '<strong>数据：</strong>12,000 份本科申请<br><strong>特征：</strong>数值（GPA、考试成绩）、类别（人口统计）、文本（申请文书）<br><strong>工具：</strong>Python、scikit-learn、pandas、matplotlib'
+            }
+        };
+
+        let currentLang = 'en';
+        const discordStats = { online: null, members: 10745, loaded: false };
+
+        function applyLang(lang, persist) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            document.body.classList.toggle('lang-zh', lang === 'zh');
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                if (lang === 'zh' && translations.zh[key] !== undefined) {
+                    el.innerHTML = translations.zh[key];
+                } else if (el.dataset.i18nEn !== undefined) {
+                    el.innerHTML = el.dataset.i18nEn;
+                }
+            });
+
+            document.title = lang === 'zh' ? translations.zh['page.title'] : "Hun Liang's Resume";
+            document.getElementById('lang-toggle').textContent = lang === 'zh' ? 'EN' : '中文';
+
+            updateExperienceToggle();
+            renderDiscordStats();
+
+            if (persist) {
+                try { localStorage.setItem('lang', lang); } catch (e) {}
+            }
+        }
+
+        function toggleLanguage() {
+            applyLang(currentLang === 'en' ? 'zh' : 'en', true);
+        }
+
+        function updateExperienceToggle() {
+            const button = document.querySelector('.show-more-btn');
+            const toggleText = document.getElementById('toggle-text');
+            if (!button || !toggleText) return;
+            const expanded = button.classList.contains('expanded');
+            if (currentLang === 'zh') {
+                toggleText.textContent = expanded ? '收起经历' : '显示更多经历';
+            } else {
+                toggleText.textContent = expanded ? 'Show less experience' : 'Show more experience';
+            }
+        }
+
+        function renderDiscordStats() {
+            const el = document.getElementById('member-count');
+            if (!el) return;
+            if (!discordStats.loaded) {
+                el.textContent = currentLang === 'zh' ? '加载中...' : 'Loading...';
+                return;
+            }
+            if (currentLang === 'zh') {
+                el.innerHTML = `<strong>${discordStats.online}</strong> 在线 | <strong>${discordStats.members}</strong> 成员`;
+            } else {
+                el.innerHTML = `<strong>${discordStats.online}</strong> online | <strong>${discordStats.members}</strong> members`;
+            }
+        }
+
+        function detectLanguage() {
+            let saved = null;
+            try { saved = localStorage.getItem('lang'); } catch (e) {}
+            if (saved === 'en' || saved === 'zh') return saved;
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+            return browserLang.startsWith('zh') ? 'zh' : 'en';
+        }
+
+        function initI18n() {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                el.dataset.i18nEn = el.innerHTML;
+            });
+            applyLang(detectLanguage());
+        }
+
         function openModal(projectId) {
             const modalId = projectId + 'Modal';
             document.getElementById(modalId).style.display = 'block';
@@ -418,7 +609,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         window.onclick = function (event) {
             if (event.target.classList.contains('modal')) {
                 const modals = document.querySelectorAll('.modal');
@@ -429,7 +619,6 @@
             }
         }
 
-        // Close modal with Escape key
         document.addEventListener('keydown', function (event) {
             if (event.key === 'Escape') {
                 const modals = document.querySelectorAll('.modal');
@@ -440,43 +629,29 @@
             }
         });
 
-        // Fetch Discord server stats
         async function fetchDiscordStats() {
             try {
-                // Using Discord Widget API
                 const response = await fetch('https://discord.com/api/guilds/707021383288488047/widget.json');
                 const data = await response.json();
-
-                const memberCount = data.presence_count || 0;
-                const totalMembers = 10745; // Hardcoded total member count
-
-                document.getElementById('member-count').innerHTML =
-                    `<strong>${memberCount}</strong> online | <strong>${totalMembers}</strong> members`;
+                discordStats.online = data.presence_count || 0;
             } catch (error) {
-                // Fallback if API fails
-                document.getElementById('member-count').innerHTML =
-                    `<strong>10745</strong> members`;
+                discordStats.online = 0;
             }
+            discordStats.loaded = true;
+            renderDiscordStats();
         }
 
-        // Load stats when page loads
-        window.addEventListener('load', fetchDiscordStats);
-
-        // Toggle UTA Experience
         function toggleUTAExperience() {
             const experiences = document.querySelectorAll('.hidden-experience');
             const button = document.querySelector('.show-more-btn');
-            const toggleText = document.getElementById('toggle-text');
 
             experiences.forEach(exp => exp.classList.toggle('visible'));
             button.classList.toggle('expanded');
-
-            if (button.classList.contains('expanded')) {
-                toggleText.textContent = 'Show less experience';
-            } else {
-                toggleText.textContent = 'Show more experience';
-            }
+            updateExperienceToggle();
         }
+
+        document.addEventListener('DOMContentLoaded', initI18n);
+        window.addEventListener('load', fetchDiscordStats);
     </script>
 </body>
 
