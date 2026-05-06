@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <canvas id="particles" aria-hidden="true"></canvas>
     <div class="container">
         <header>
             <div class="header-row">
@@ -652,6 +653,151 @@
 
         document.addEventListener('DOMContentLoaded', initI18n);
         window.addEventListener('load', fetchDiscordStats);
+
+        (function initParticles() {
+            const canvas = document.getElementById('particles');
+            if (!canvas || !canvas.getContext) return;
+
+            const ctx = canvas.getContext('2d');
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+            const SPACING = 34;
+            const BASE_SIZE = 2;
+            const SPRING = 0.08;
+            const DAMP = 0.84;
+            const CURSOR_RADIUS = 110;
+            const CURSOR_FORCE = 1.8;
+            const IDLE_DELAY = 2000;
+
+            let width = 0, height = 0;
+            let particles = [];
+            const cursor = { x: -9999, y: -9999, active: false };
+            let lastInteract = -Infinity;
+            let wave = null;
+            let nextWaveTime = 0;
+            let rafId = null;
+
+            function resize() {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width * dpr;
+                canvas.height = height * dpr;
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
+                ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                particles = [];
+                const cols = Math.floor(width / SPACING);
+                const rows = Math.floor(height / SPACING);
+                const ox = (width - (cols - 1) * SPACING) / 2;
+                const oy = (height - (rows - 1) * SPACING) / 2;
+                for (let j = 0; j < rows; j++) {
+                    for (let i = 0; i < cols; i++) {
+                        const hx = ox + i * SPACING;
+                        const hy = oy + j * SPACING;
+                        particles.push({ hx, hy, x: hx, y: hy, vx: 0, vy: 0 });
+                    }
+                }
+            }
+
+            function startWave(t) {
+                const diagonal = Math.random() < 0.5 ? Math.PI / 4 : -Math.PI / 4;
+                const cx = width * (0.25 + Math.random() * 0.5);
+                const cy = height * (0.25 + Math.random() * 0.5);
+                wave = { angle: diagonal, cx, cy, t0: t, duration: 1400 };
+            }
+
+            function frame(t) {
+                ctx.clearRect(0, 0, width, height);
+
+                if ((t - lastInteract) > IDLE_DELAY && !wave && t > nextWaveTime) {
+                    startWave(t);
+                }
+
+                let waveCtx = null;
+                if (wave) {
+                    const progress = (t - wave.t0) / wave.duration;
+                    if (progress >= 1) {
+                        nextWaveTime = t + 2200 + Math.random() * 1800;
+                        wave = null;
+                    } else {
+                        const dirX = Math.cos(wave.angle);
+                        const dirY = Math.sin(wave.angle);
+                        waveCtx = { progress, dirX, dirY, nx: -dirY, ny: dirX };
+                    }
+                }
+
+                for (const p of particles) {
+                    p.vx += (p.hx - p.x) * SPRING;
+                    p.vy += (p.hy - p.y) * SPRING;
+
+                    if (cursor.active) {
+                        const dx = p.x - cursor.x;
+                        const dy = p.y - cursor.y;
+                        const dist = Math.hypot(dx, dy);
+                        if (dist > 0 && dist < CURSOR_RADIUS) {
+                            const f = 1 - dist / CURSOR_RADIUS;
+                            const k = f * f * CURSOR_FORCE;
+                            p.vx += (dx / dist) * k;
+                            p.vy += (dy / dist) * k;
+                        }
+                    }
+
+                    p.vx *= DAMP;
+                    p.vy *= DAMP;
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    let pop = 0;
+                    if (waveCtx) {
+                        const dx = p.hx - wave.cx;
+                        const dy = p.hy - wave.cy;
+                        const perp = dx * waveCtx.nx + dy * waveCtx.ny;
+                        const lineWidth = 18;
+                        if (Math.abs(perp) < lineWidth) {
+                            const along = dx * waveCtx.dirX + dy * waveCtx.dirY;
+                            const span = Math.max(width, height);
+                            const u = along / span + 0.5;
+                            const local = Math.max(0, Math.min(1, waveCtx.progress * 1.6 - u * 0.55));
+                            const env = Math.sin(local * Math.PI);
+                            const profile = 1 - Math.abs(perp) / lineWidth;
+                            pop = env * profile;
+                        }
+                    }
+
+                    const size = BASE_SIZE + pop * 3;
+                    const alpha = 0.32 + pop * 0.55;
+                    ctx.fillStyle = `rgba(45, 55, 75, ${alpha.toFixed(3)})`;
+                    ctx.fillRect(p.x - size / 2, p.y - size / 2, size, size);
+                }
+
+                rafId = requestAnimationFrame(frame);
+            }
+
+            function start() { if (rafId == null) rafId = requestAnimationFrame(frame); }
+            function stop() { if (rafId != null) { cancelAnimationFrame(rafId); rafId = null; } }
+
+            function noteMove(x, y) {
+                cursor.x = x;
+                cursor.y = y;
+                cursor.active = true;
+                lastInteract = performance.now();
+                wave = null;
+            }
+
+            window.addEventListener('mousemove', (e) => noteMove(e.clientX, e.clientY));
+            window.addEventListener('mouseout', (e) => { if (!e.relatedTarget) cursor.active = false; });
+            window.addEventListener('blur', () => { cursor.active = false; });
+            window.addEventListener('touchmove', (e) => {
+                if (e.touches.length) noteMove(e.touches[0].clientX, e.touches[0].clientY);
+            }, { passive: true });
+            window.addEventListener('touchend', () => { cursor.active = false; });
+
+            resize();
+            start();
+            window.addEventListener('resize', resize);
+            document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+        })();
     </script>
 </body>
 

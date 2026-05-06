@@ -3,7 +3,9 @@
     "allow": [
       "Bash(open:*)",
       "Bash(node -e \"const fs=require\\('fs'\\);const html=fs.readFileSync\\('/Users/hunliang/Projects/fractaloffugue/index.html','utf8'\\);console.log\\('keys count:', \\(html.match\\(/data-i18n=/g\\)||[]\\).length\\);\")",
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(rm /Users/hunliang/Projects/fractaloffugue/.git/HEAD.lock /Users/hunliang/Projects/fractaloffugue/.git/objects/maintenance.lock)",
+      "Bash(git config *)"
     ]
   }
 }
