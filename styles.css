@@ -564,6 +564,11 @@ a:hover {
     border-radius: 4px;
 }
 
+/* Mobile PDF button — hidden on desktop */
+.pdf-mobile-btn {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px 15px;
@@ -610,6 +615,36 @@ a:hover {
     }
 
     .modal-viewer {
-        min-height: 500px;
+        min-height: unset;
+    }
+
+    /* On mobile: hide the iframe, show the open button instead */
+    .modal-viewer iframe {
+        display: none;
+    }
+
+    .pdf-mobile-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 24px;
+        background: #000;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-top: 8px;
+        transition: background 0.2s;
+    }
+
+    .pdf-mobile-btn:hover,
+    .pdf-mobile-btn:active {
+        background: #333;
+    }
+
+    .pdf-mobile-btn i {
+        font-size: 1.3rem;
     }
 }
