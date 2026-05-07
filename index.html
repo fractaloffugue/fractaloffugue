@@ -85,11 +85,11 @@
                         <li data-i18n="exp.anode.b1">Built a personalized crypto news aggregation engine using Go, PostgreSQL, Redis, and Next.js
                             that prioritizes relevant content based on user watchlists, tagging key sentiment shifts and
                             market trends through RESTful APIs and WebSocket connections.</li>
-                        <li data-i18n="exp.anode.b2">Implemented advanced topic modeling algorithms (LDA, BERTopic) with Python, scikit-learn,
+                        <li data-i18n="exp.anode.b2">Implemented advanced topic modeling algorithms (LDA<span class="term-info" tabindex="0"><i class="ph ph-magnifying-glass"></i><span class="term-tooltip"><strong>Latent Dirichlet Allocation</strong> — a generative probabilistic model that represents each document as a mixture of latent topics, where each topic is itself a distribution over words.</span></span>, <a href="https://maartengr.github.io/BERTopic/index.html" target="_blank">BERTopic</a>) with Python, scikit-learn,
                             and Hugging Face Transformers, to extract underlying themes from crypto news sources,
                             enabling users to discover hidden market narratives and interconnected industry
                             developments.</li>
-                        <li data-i18n="exp.anode.b3">Developed predictive time-series forecasting using frameworks like NeuralProphet that track
+                        <li data-i18n="exp.anode.b3">Developed predictive time-series forecasting using frameworks like <a href="https://neuralprophet.com/" target="_blank">NeuralProphet</a><span class="term-info" tabindex="0"><i class="ph ph-magnifying-glass"></i><span class="term-tooltip"><strong>NeuralProphet</strong> — a PyTorch-based hybrid forecasting library that extends Facebook Prophet by combining classical decomposition (trend, seasonality, autoregression) with neural network components for richer time-series modeling.</span></span> that track
                             sentiment momentum patterns and their price trajectories, achieving 78% directional accuracy
                             on select tokens.</li>
                     </ul>
@@ -154,12 +154,7 @@
                     </ul>
                 </div>
 
-                <button class="show-more-btn" onclick="toggleUTAExperience()">
-                    <span id="toggle-text">Show more experience</span>
-                    <i class="ph ph-caret-down" id="toggle-icon"></i>
-                </button>
-
-                <div class="item hidden-experience">
+                <div class="item">
                     <div class="item-header">
                         <div>
                             <strong data-i18n="exp.visionarium.title">Undergraduate Research Assistant</strong>
@@ -179,17 +174,32 @@
                     <ul>
                         <li data-i18n="exp.visionarium.b1">Implemented new techniques for scientific visualizations with HTML5/X3D in ParaView and
                             Castle Game Engine with Python – improved rendering performance by ~40% and reduced load
-                            times for complex 3D medical datasets. My work was critical to our lab winning a grant from
-                            the <a
+                            times for complex 3D medical datasets. My work was critical to our industry partner <a
+                                href="https://cairinainc.com/" target="_blank">Cairina Inc.</a> winning a spot in the <a
                                 href="https://cairinainc.com/cairina-joins-ramp-accelerator-to-advance-precision-cancer-technology/"
-                                , target="_blank">RAMP</a> accelerator.</li>
+                                target="_blank">RAMP</a> accelerator.</li>
                         <li data-i18n="exp.visionarium.b2">Submitted <a href="https://dl.acm.org/doi/epdf/10.1145/3611314.3625831"
                                 target="_blank">"Enhancing Brain Flow Visualization with Automated 3D Data Processing: A
                                 Study on DCE-MRI Data from Mice with Tumors"</a> paper to the ACM Web3D conference.</li>
                         <li data-i18n="exp.visionarium.b3">Won 2023 VTURCS 3rd Place Research & 3rd Place Industry Awards within the Department of
                             Computer Science at Virginia Tech annual research symposium.</li>
                     </ul>
+                    <div class="image-gallery" id="visionarium-gallery">
+                        <figure>
+                            <img src="images/visionarium/1.jpeg" alt="VTURCS Award Ceremony" loading="lazy">
+                            <figcaption data-i18n="exp.visionarium.caption1">Receiving VTURCS 3rd Place Research and 3rd Place Industry awards with teammates at the 2023 Virginia Tech CS research symposium.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/visionarium/2.jpeg" alt="Research Poster" loading="lazy">
+                            <figcaption data-i18n="exp.visionarium.caption2">Research poster on the automated 3D pipeline for brain flow visualization, presented at the symposium and submitted to ACM Web3D.</figcaption>
+                        </figure>
+                    </div>
                 </div>
+
+                <button class="show-more-btn" onclick="toggleUTAExperience()">
+                    <span id="toggle-text">Show more experience</span>
+                    <i class="ph ph-caret-down" id="toggle-icon"></i>
+                </button>
 
                 <div class="item hidden-experience" id="uta-experience">
                     <div class="item-header">
@@ -437,8 +447,8 @@
                 'exp.anode.company': '<a href="https://beta.anode.news/" target="_blank">Anode News</a> | 加密货币情报平台',
                 'exp.anode.location': '弗吉尼亚州布莱克斯堡',
                 'exp.anode.b1': '使用 Go、PostgreSQL、Redis 与 Next.js 构建个性化加密货币新闻聚合引擎，依据用户关注列表对内容进行优先级排序，通过 RESTful API 与 WebSocket 标记关键的情绪转变与市场趋势。',
-                'exp.anode.b2': '基于 Python、scikit-learn 与 Hugging Face Transformers 实现 LDA、BERTopic 等高级主题建模算法，从加密新闻源中提取潜在主题，帮助用户发现隐藏的市场叙事与行业关联动态。',
-                'exp.anode.b3': '使用 NeuralProphet 等框架开发预测性时间序列模型，跟踪情绪动量与价格走势之间的关系，在选定代币上达到 78% 的方向准确率。',
+                'exp.anode.b2': '基于 Python、scikit-learn 与 Hugging Face Transformers 实现 LDA<span class="term-info" tabindex="0"><i class="ph ph-magnifying-glass"></i><span class="term-tooltip"><strong>Latent Dirichlet Allocation（潜在狄利克雷分配）</strong> — 一种生成式概率模型，将每篇文档视为若干潜在主题的混合，而每个主题本身又是词项的概率分布。</span></span>、<a href="https://maartengr.github.io/BERTopic/index.html" target="_blank">BERTopic</a> 等高级主题建模算法，从加密新闻源中提取潜在主题，帮助用户发现隐藏的市场叙事与行业关联动态。',
+                'exp.anode.b3': '使用 <a href="https://neuralprophet.com/" target="_blank">NeuralProphet</a><span class="term-info" tabindex="0"><i class="ph ph-magnifying-glass"></i><span class="term-tooltip"><strong>NeuralProphet</strong> — 基于 PyTorch 的混合时间序列预测库，在 Facebook Prophet 的趋势、季节性与自回归分解之上引入神经网络组件，可对更复杂的时间序列进行建模。</span></span> 等框架开发预测性时间序列模型，跟踪情绪动量与价格走势之间的关系，在选定代币上达到 78% 的方向准确率。',
 
                 'exp.peraton.title': '软件工程实习生',
                 'exp.peraton.date': '2023.05 — 2023.09',
@@ -452,9 +462,11 @@
                 'exp.visionarium.date': '2021.08 — 2023.12',
                 'exp.visionarium.company': '<a href="https://arc.vt.edu/services/visualization/visionarium.html" target="_blank">Visionarium @ 高级研究计算中心</a>，弗吉尼亚理工大学',
                 'exp.visionarium.location': '弗吉尼亚州布莱克斯堡',
-                'exp.visionarium.b1': '在 ParaView 与 Castle Game Engine 中使用 HTML5/X3D 与 Python 实现新的科学可视化技术——渲染性能提升约 40%，复杂三维医学数据的加载时间显著缩短。该工作对实验室获得 <a href="https://cairinainc.com/cairina-joins-ramp-accelerator-to-advance-precision-cancer-technology/" target="_blank">RAMP</a> 加速器资助至关重要。',
+                'exp.visionarium.b1': '在 ParaView 与 Castle Game Engine 中使用 HTML5/X3D 与 Python 实现新的科学可视化技术——渲染性能提升约 40%，复杂三维医学数据的加载时间显著缩短。该工作对我们的产业合作伙伴 <a href="https://cairinainc.com/" target="_blank">Cairina Inc.</a> 入选 <a href="https://cairinainc.com/cairina-joins-ramp-accelerator-to-advance-precision-cancer-technology/" target="_blank">RAMP</a> 加速器至关重要。',
                 'exp.visionarium.b2': '向 ACM Web3D 会议提交论文 <a href="https://dl.acm.org/doi/epdf/10.1145/3611314.3625831" target="_blank">《使用自动化三维数据处理增强脑血流可视化：基于荷瘤小鼠 DCE-MRI 数据的研究》</a>。',
                 'exp.visionarium.b3': '在弗吉尼亚理工大学计算机科学系年度研究研讨会上荣获 2023 年 VTURCS 研究三等奖与产业三等奖。',
+                'exp.visionarium.caption1': '在 2023 年弗吉尼亚理工大学计算机科学研究研讨会上与团队一同获得 VTURCS 研究三等奖与产业三等奖。',
+                'exp.visionarium.caption2': '研究海报：脑血流可视化的自动化三维数据处理流程，于研讨会展示并投稿至 ACM Web3D 会议。',
 
                 'exp.sanghani.title': '研究生科研助理',
                 'exp.sanghani.date': '2025.05 — 2025.09',
