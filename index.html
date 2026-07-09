@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap"
         rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="styles.css">
@@ -58,6 +58,7 @@
                     </div>
                     <p class="coursework" data-i18n="edu.coursework"><strong>Coursework:</strong> Deep Learning, Machine Learning, Info.
                         Visualization, AI in Software Delivery, Social Media Analytics</p>
+                    <p class="coursework" data-i18n="edu.certifications"><strong>Certifications:</strong> CFA Level 1 Candidate</p>
                 </div>
             </section>
 
@@ -67,7 +68,7 @@
                 <div class="item">
                     <div class="item-header">
                         <div>
-                            <strong data-i18n="exp.anode.title">Founder & Backend Software Engineer</strong>
+                            <strong data-i18n="exp.anode.title">Founding Software Engineer</strong>
                         </div>
                         <div>
                             <span class="date" data-i18n="exp.anode.date">Jan 2025 - Jan 2026</span>
@@ -313,6 +314,46 @@
         </main>
     </div>
 
+    <button id="pet-projects-tab" class="side-tab" onclick="togglePetProjects()" aria-expanded="false" aria-controls="pet-projects-panel">
+        <i class="ph ph-rocket-launch"></i>
+        <span data-i18n="side.petprojects.tab">Pet Projects</span>
+    </button>
+
+    <div id="pet-projects-overlay" class="side-panel-overlay" onclick="togglePetProjects()"></div>
+
+    <aside id="pet-projects-panel" class="side-panel" aria-hidden="true">
+        <div class="side-panel-header">
+            <h3 data-i18n="side.petprojects.title"><i class="ph ph-rocket-launch"></i> Pet Projects</h3>
+            <button class="side-panel-close" onclick="togglePetProjects()" aria-label="Close">&times;</button>
+        </div>
+        <div class="side-panel-body">
+            <a class="project-card" href="https://github.com/fractaloffugue" target="_blank" rel="noopener">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <strong data-i18n="side.pet1.title">TODO: Project Name</strong>
+                    </div>
+                    <i class="ph ph-arrow-square-out"></i>
+                </div>
+                <p class="project-description" data-i18n="side.pet1.desc">TODO: short description of this pet project.</p>
+                <div class="project-tags">
+                    <span class="tag">TODO</span>
+                </div>
+            </a>
+            <a class="project-card" href="https://github.com/fractaloffugue" target="_blank" rel="noopener">
+                <div class="project-header">
+                    <div class="project-title-row">
+                        <strong data-i18n="side.pet2.title">TODO: Project Name</strong>
+                    </div>
+                    <i class="ph ph-arrow-square-out"></i>
+                </div>
+                <p class="project-description" data-i18n="side.pet2.desc">TODO: short description of this pet project.</p>
+                <div class="project-tags">
+                    <span class="tag">TODO</span>
+                </div>
+            </a>
+        </div>
+    </aside>
+
     <!-- Modal for Alphacore Research -->
     <div id="alphacoreModal" class="modal">
         <div class="modal-content">
@@ -441,6 +482,7 @@
                 'edu.gpa.master': 'GPA：3.9/4.0',
                 'edu.gpa.bachelor': 'GPA：3.8/4.0，优等荣誉毕业',
                 'edu.coursework': '<strong>相关课程：</strong>深度学习、机器学习、信息可视化、AI 软件交付、社交媒体分析',
+                'edu.certifications': '<strong>认证：</strong>CFA一级考生',
 
                 'exp.anode.title': '创始人兼后端软件工程师',
                 'exp.anode.date': '2025.01 — 2026.01',
@@ -491,6 +533,13 @@
                 'proj.smartadmit.badge': '机器学习',
                 'proj.smartadmit.date': '2024.08 — 2024.12',
                 'proj.smartadmit.desc': '使用多层感知机结合多模态特征（数值、类别、文本）构建大学录取自动决策系统。通过特征工程与集成方法在 12,000 份本科申请中实现 58% 总体准确率与 72% 录取准确率。',
+
+                'side.petprojects.tab': '个人项目',
+                'side.petprojects.title': '<i class="ph ph-rocket-launch"></i> 个人项目',
+                'side.pet1.title': '待添加：项目名称',
+                'side.pet1.desc': '待添加：该个人项目的简短描述。',
+                'side.pet2.title': '待添加：项目名称',
+                'side.pet2.desc': '待添加：该个人项目的简短描述。',
 
                 'tag.dataviz': '数据可视化',
 
@@ -639,6 +688,7 @@
                     modal.style.display = 'none';
                 });
                 document.body.style.overflow = 'auto';
+                togglePetProjects(true);
             }
         });
 
@@ -652,6 +702,19 @@
             }
             discordStats.loaded = true;
             renderDiscordStats();
+        }
+
+        function togglePetProjects(forceClose) {
+            const tab = document.getElementById('pet-projects-tab');
+            const panel = document.getElementById('pet-projects-panel');
+            const overlay = document.getElementById('pet-projects-overlay');
+            const open = forceClose === true ? false : !panel.classList.contains('open');
+
+            panel.classList.toggle('open', open);
+            overlay.classList.toggle('open', open);
+            tab.classList.toggle('open', open);
+            panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+            tab.setAttribute('aria-expanded', open ? 'true' : 'false');
         }
 
         function toggleUTAExperience() {
@@ -669,6 +732,7 @@
         (function initParticles() {
             const canvas = document.getElementById('particles');
             if (!canvas || !canvas.getContext) return;
+            if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
             const ctx = canvas.getContext('2d');
             const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -779,7 +843,7 @@
 
                     const size = BASE_SIZE + pop * 3;
                     const alpha = 0.32 + pop * 0.55;
-                    ctx.fillStyle = `rgba(45, 55, 75, ${alpha.toFixed(3)})`;
+                    ctx.fillStyle = `rgba(51, 66, 158, ${alpha.toFixed(3)})`;
                     ctx.fillRect(p.x - size / 2, p.y - size / 2, size, size);
                 }
 

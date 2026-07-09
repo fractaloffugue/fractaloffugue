@@ -5,7 +5,12 @@
       "Bash(node -e \"const fs=require\\('fs'\\);const html=fs.readFileSync\\('/Users/hunliang/Projects/fractaloffugue/index.html','utf8'\\);console.log\\('keys count:', \\(html.match\\(/data-i18n=/g\\)||[]\\).length\\);\")",
       "Bash(node *)",
       "Bash(rm /Users/hunliang/Projects/fractaloffugue/.git/HEAD.lock /Users/hunliang/Projects/fractaloffugue/.git/objects/maintenance.lock)",
-      "Bash(git config *)"
+      "Bash(git config *)",
+      "Skill(run)",
+      "Bash(python3 -c \"import playwright\")",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(npx --no-install playwright screenshot --viewport-size=1280,900 http://localhost:8934/index.html /private/tmp/claude-501/-Users-hunliang-Projects-fractaloffugue/ac03a76f-f728-4a87-8f77-5ae0217d23b1/scratchpad/preview.png)",
+      "Bash(npx --no-install playwright install chromium)"
     ]
   }
 }
