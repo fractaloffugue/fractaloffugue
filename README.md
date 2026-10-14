@@ -1,4 +1,4 @@
-<div><h1><img src="https://emojis.slackmojis.com/emojis/images/1643514389/3643/cool-doge.gif?1643514389" width="30"/> Hey! I'm Hun, nice to see you.</h1></div>
+<div><h1><img src="https://emojis.slackmojis.com/emojis/images/1643514389/3643/cool-doge.gif?1643514389" width="30"/> Hey! I'm Hunter, nice to see you.</h1></div>
 
 **Full-Stack AI/ML Engineer | CFA Candidate**
 
